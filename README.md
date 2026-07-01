@@ -95,11 +95,3 @@ main().catch((error) => {
 npx hardhat run scripts/deploy.js --network sepolia
 
 ```
-
-## License
-
-MIT
-
-```
-
-```
