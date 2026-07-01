@@ -1,5 +1,4 @@
-Markdown
-# NFT Marketplace Smart Contract
+# NFT Smart Contract
 
 A standard ERC-721 NFT Marketplace written in Solidity (`^0.8.9`) using OpenZeppelin. It allows users to mint NFTs with metadata, list them for sale, and buy them directly.
 
@@ -21,11 +20,15 @@ A standard ERC-721 NFT Marketplace written in Solidity (`^0.8.9`) using OpenZepp
 ## Quick Start & Interaction
 
 ### 1. Project Setup
-```bash
+
 npm install @openzeppelin/contracts hardhat dotenv
 npx hardhat compile
-2. Interaction Code (ethers.js example)
-JavaScript
+
+```
+
+### 2. Interaction Code (ethers.js example)
+
+
 // Mint an NFT (Price in Wei: 0.05 ETH)
 await nftMarketplace.createNFT("My NFT", ethers.parseEther("0.05"), "ipfs://metadata-link");
 
@@ -34,13 +37,24 @@ await nftMarketplace.toggleNFTForSale(0);
 
 // Buy the NFT from another wallet
 await nftMarketplace.buyNFT(0, { value: ethers.parseEther("0.05") });
-Deployment Guide (Hardhat)
-1. Environment Configuration (.env)
-Snippet de código
+
+```
+
+---
+
+## Deployment Guide (Hardhat)
+
+### 1. Environment Configuration (`.env`)
+
+
 PRIVATE_KEY="your_wallet_private_key"
 RPC_URL="[https://sepolia.infura.io/v3/your_api_key](https://sepolia.infura.io/v3/your_api_key)"
-2. Hardhat Config (hardhat.config.js)
-JavaScript
+
+```
+
+### 2. Hardhat Config (`hardhat.config.js`)
+
+
 require("@nomicfoundation/hardhat-toolbox");
 require("dotenv").config();
 
@@ -53,8 +67,12 @@ module.exports = {
     }
   }
 };
-3. Deployment Script (scripts/deploy.js)
-JavaScript
+
+```
+
+### 3. Deployment Script (`scripts/deploy.js`)
+
+
 const hre = require("hardhat");
 
 async function main() {
@@ -68,8 +86,20 @@ main().catch((error) => {
   console.error(error);
   process.exitCode = 1;
 });
-4. Deploy Command
-Bash
+
+```
+
+### 4. Deploy Command
+
+
 npx hardhat run scripts/deploy.js --network sepolia
-License
+
+```
+
+## License
+
 MIT
+
+```
+
+```
